@@ -1,11 +1,9 @@
 name: CI
 
 on:
-  push:
+  pull_request:
     branches:
       - main
-      - master
-  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -66,5 +64,5 @@ jobs:
         env:
           MATURIN_PYPI_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
         with:
-          command: upload
-          args: --skip-existing *
+          command: upload 
+          args: -r testpypi --skip-existing *
