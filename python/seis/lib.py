@@ -1,11 +1,6 @@
-import seis
-
-
-def my_first_function():
-    test = seis.seis.sum_as_string(2, 2)
-    return test
+from seis import seis
 
 
 def create_gather():
-    new_gather = seis.seis.Gather(1, 2, 3)
+    new_gather = seis.Gather(1, 2, 3, 0.01, seis.Precision.Double)
     return new_gather
